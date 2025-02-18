@@ -6,10 +6,10 @@ int main()
 {
 	int n;
 	cin>>n;
-	float sum=0;
+	int sum=0;
 	for(int i=0; i<=n; i++)
 	{
-		sum+=(2.0*n+1)/(2.0*n+2);
+		sum+=pow(-1, i+1)*i;
 	}
 	cout<<sum;
 }
