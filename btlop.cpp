@@ -6,10 +6,21 @@ int main()
 {
 	int n;
 	cin>>n;
-	int sum=0;
-	for(int i=0; i<=n; i++)
+	map<int, int> m;
+	for(int i=2; i<=sqrt(n); i++)
 	{
-		sum+=pow(-1, i+1)*i;
+		while(n%i==0)
+		{
+			m[i]++;
+			n/=i;
+		}
 	}
-	cout<<sum;
+	if(n>1)
+	{
+		m[n]++;
+	}
+	for(auto x:m)
+	{
+		cout<<x.first<<" "<<x.second<<" ";
+	}
 }
